@@ -1,0 +1,79 @@
+{
+  "info": {
+    "name": "ML Delivery API",
+    "description": "APIs for delivery delay prediction, sentiment analysis, and demand forecasting",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ml-delivery-api-1.onrender.com/health",
+          "protocol": "https",
+          "host": ["ml-delivery-api-1", "onrender", "com"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Predict Delivery Delay",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"platform_name\": \"blinkit\",\n  \"order_value_inr\": 450,\n  \"delivery_time_min\": 25,\n  \"customer_delay_rate\": 0.24\n}"
+        },
+        "url": {
+          "raw": "https://ml-delivery-api-1.onrender.com/predict-delay",
+          "protocol": "https",
+          "host": ["ml-delivery-api-1", "onrender", "com"],
+          "path": ["predict-delay"]
+        }
+      }
+    },
+    {
+      "name": "Analyze Sentiment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"text\": \"Delivery was very slow, but product quality is great.\"\n}"
+        },
+        "url": {
+          "raw": "https://ml-delivery-api-1.onrender.com/analyze-sentiment",
+          "protocol": "https",
+          "host": ["ml-delivery-api-1", "onrender", "com"],
+          "path": ["analyze-sentiment"]
+        }
+      }
+    },
+    {
+      "name": "Get Demand Forecast",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ml-delivery-api-1.onrender.com/forecast",
+          "protocol": "https",
+          "host": ["ml-delivery-api-1", "onrender", "com"],
+          "path": ["forecast"]
+        }
+      }
+    }
+  ]
+}
