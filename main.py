@@ -117,7 +117,7 @@ async def analyze_sentiment(req: SentimentRequest):
         "Content-Type": "application/json"
     }
     try:
-        resp = requests.post(SENTIMENT_URL, json=payload, headers=headers, timeout=30)
+        resp = requests.post(SENTIMENT_URL, json=payload, headers=headers, timeout=90)
         resp.raise_for_status()
         result = resp.json()
         # result["predictions"][0] is a dict like {"delivery": "negative", ...}
