@@ -79,7 +79,7 @@ async def predict_delay(order: DeliveryRequest):
         "Content-Type": "application/json"
     }
     try:
-        resp = requests.post(DELIVERY_URL, json=payload, headers=headers, timeout=30)
+        resp = requests.post(DELIVERY_URL, json=payload, headers=headers, timeout=90)
         resp.raise_for_status()
         result = resp.json()
         prob = result["predictions"][0]
